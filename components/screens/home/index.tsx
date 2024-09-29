@@ -55,13 +55,13 @@ function HomeScreen() {
         />
         <div className="w-full h-full pt-10 bg-black/[0.3] flex gap-5 justify-center items-center absolute">
           <div className="w-[90%] max-md:py-16 md:w-[50%] h-[60%] gap-10 md:gap-5 flex flex-col justify-center items-start">
-            <Image
+            {/* <Image
               src={"/Vector.svg"}
               alt="herosection image"
               width={200}
               height={200}
               className="h-[60px] w-full object-fill top-0 md:hidden"
-            />
+            /> */}
             <h1 className=" uppercase font-extrabold text-3xl md:text-4xl lg:text-5xl">
               Get that dream body <span className=" text-[#EBF400]">Now!</span>{" "}
             </h1>

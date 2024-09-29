@@ -65,6 +65,7 @@ function Header() {
                 key={item.id}
                 href={item.link}
                 className="hover:bg-black p-3 rounded"
+                onClick={toggleNav}
               >
                 {item.name}
               </Link>

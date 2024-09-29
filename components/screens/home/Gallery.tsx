@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 export function CarouselGallery() {
   const Items = [
     { id: 1, image: "/images/arobic.jpg" },
@@ -10,8 +8,6 @@ export function CarouselGallery() {
     { id: 6, image: "/images/cardio1.jpg" },
     { id: 7, image: "/images/bodybuild.jpg" },
   ];
-
-  
 
   return (
     <div className="carousel rounded-box w-full h-full ">

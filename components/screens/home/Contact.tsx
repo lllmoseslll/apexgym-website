@@ -78,7 +78,6 @@ function Contact({ id }: { id: string }) {
             required
           />
           <PhoneInput
-            international
             defaultCountry={"ug"}
             inputStyle={{
               backgroundColor: "#858502",

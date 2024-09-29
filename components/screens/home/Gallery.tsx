@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function CarouselGallery() {
   const Items = [
     { id: 1, image: "/images/arobic.jpg" },
@@ -14,7 +16,7 @@ export function CarouselGallery() {
       {Items.map((item) => {
         return (
           <div key={item.id} className="carousel-item w-full">
-            <img
+            <Image
               src={item.image}
               alt="picture"
               className="w-full h-full object-cover"
@@ -48,7 +50,11 @@ export function CarouselGallery2() {
     <div className="carousel rounded-box w-full h-full">
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
-          <img src={item.image} alt="picture" className="w-full object-cover" />
+          <Image
+            src={item.image}
+            alt="picture"
+            className="w-full object-cover"
+          />
         </div>
       ))}
     </div>
@@ -77,7 +83,11 @@ export function CarouselGallery3() {
     <div className="carousel rounded-box w-full h-full">
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
-          <img src={item.image} alt="picture" className="w-full object-cover" />
+          <Image
+            src={item.image}
+            alt="picture"
+            className="w-full object-cover"
+          />
         </div>
       ))}
     </div>
@@ -106,7 +116,11 @@ export function CarouselGallery4() {
     <div className="carousel rounded-box w-full h-full">
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
-          <img src={item.image} alt="picture" className="w-full object-cover" />
+          <Image
+            src={item.image}
+            alt="picture"
+            className="w-full object-cover"
+          />
         </div>
       ))}
     </div>

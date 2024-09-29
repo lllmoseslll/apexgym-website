@@ -18,7 +18,7 @@ export function Products() {
       opts={{
         align: "start",
       }}
-      className="w-full max-w-md md:max-w-xl lg:max-w-4xl"
+      className="w-full max-w-[220px] sm:max-w-md md:max-w-xl lg:max-w-4xl"
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (

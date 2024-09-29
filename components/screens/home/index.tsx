@@ -179,57 +179,7 @@ function HomeScreen() {
 
         <Products />
 
-        {/* <div className="flex gap-10 w-[60%] md:w-[80%] overflow-x-auto">
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-          <Image
-            src={""}
-            alt=""
-            width={400}
-            height={400}
-            className="w-full h-60 "
-          />
-        </div> */}
+       
       </section>
       {/* contact section */}
       <Contact id="contact" />

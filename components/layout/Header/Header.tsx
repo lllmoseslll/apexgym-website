@@ -8,9 +8,9 @@ import { VscThreeBars } from "react-icons/vsc";
 function Header() {
   const data = [
     { id: 1, name: "Home", link: "/" },
-    { id: 2, name: "Services", link: "#serivces" },
-    { id: 2, name: "Pricing", link: "#pricing" },
-    { id: 2, name: "Products", link: "#product" },
+    { id: 2, name: "Services", link: "/#serivces" },
+    { id: 2, name: "Pricing", link: "/#pricing" },
+    { id: 2, name: "Products", link: "/#product" },
     { id: 3, name: "About Us", link: "/about" },
   ];
 

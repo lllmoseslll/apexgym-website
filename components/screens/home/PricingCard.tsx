@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface pricingStyle {
   className: string;
   name: string;
@@ -41,9 +43,12 @@ function PricingCard({
         </div>
       </div>
 
-      <button className="text-black bg-white font-extrabold text-xl py-1 px-10 rounded-md">
+      <Link
+        href={"https://wa.me/256705366652"}
+        className="text-black bg-white font-extrabold text-xl py-1 px-10 rounded-md"
+      >
         Subscribe now
-      </button>
+      </Link>
     </div>
   );
 }

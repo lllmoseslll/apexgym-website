@@ -17,6 +17,8 @@ export function CarouselGallery() {
         return (
           <div key={item.id} className="carousel-item w-full">
             <Image
+              height={20}
+              width={20}
               src={item.image}
               alt="picture"
               className="w-full h-full object-cover"
@@ -51,6 +53,8 @@ export function CarouselGallery2() {
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
           <Image
+            height={20}
+            width={20}
             src={item.image}
             alt="picture"
             className="w-full object-cover"
@@ -84,6 +88,8 @@ export function CarouselGallery3() {
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
           <Image
+            height={20}
+            width={20}
             src={item.image}
             alt="picture"
             className="w-full object-cover"
@@ -117,6 +123,8 @@ export function CarouselGallery4() {
       {reorderedItems.map((item) => (
         <div key={item.id} className="carousel-item w-full">
           <Image
+            height={20}
+            width={20}
             src={item.image}
             alt="picture"
             className="w-full object-cover"

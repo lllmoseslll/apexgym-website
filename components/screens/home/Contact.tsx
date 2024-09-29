@@ -8,7 +8,45 @@ import { RiWhatsappFill } from "react-icons/ri";
 import Link from "next/link";
 
 function Contact({ id }: { id: string }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState<string | undefined>(undefined);
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false); // Loading state
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formData.username || !formData.email || !value || !formData.message) {
+      alert("Please fill in all the fields.");
+      return;
+    }
+
+    setLoading(true); // Set loading to true
+
+    // Simulate form submission or handle API request here
+    setTimeout(() => {
+      console.log("Form submitted:", { ...formData, phoneNumber: value });
+
+      // Reset form after submission
+      setFormData({
+        username: "",
+        email: "",
+        message: "",
+      });
+      setValue("");
+
+      setLoading(false); // Reset loading state
+    }, 2000); // Simulating a 2-second loading time
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <section
@@ -18,31 +56,32 @@ function Contact({ id }: { id: string }) {
       <h1 className="text-4xl font-bold">Contact us</h1>
       <div className="flex w-[80%] justify-center items-center gap-20 ">
         <form
-          action=""
-          className=" flex flex-col space-y-10 w-full md:w-[400px]"
+          onSubmit={handleSubmit}
+          className="flex flex-col space-y-10 w-full md:w-[400px]"
         >
           <input
             type="text"
             name="username"
-            id=""
-            placeholder="Enter your name "
-            className="w-full text-white bg-[#858502] p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            value={formData.username}
+            onChange={handleInputChange}
+            placeholder="Enter your name"
+            className="w-full text-white bg-[#858502] p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            required
           />
           <input
             type="email"
             name="email"
-            id=""
+            value={formData.email}
+            onChange={handleInputChange}
             placeholder="Enter your email"
-            className="w-full text-white bg-[#858502] p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            className="w-full text-white bg-[#858502] p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            required
           />
           <PhoneInput
             international
             defaultCountry={"ug"}
-            className=""
-            inputClassName=""
             inputStyle={{
               backgroundColor: "#858502",
-              marginLeft: 10,
               width: "100%",
               padding: "10px",
               border: "none",
@@ -61,35 +100,38 @@ function Contact({ id }: { id: string }) {
           />
           <textarea
             name="message"
-            id=""
+            value={formData.message}
+            onChange={handleInputChange}
             rows={5}
-            placeholder="leave a message"
-            className="w-full text-white bg-[#858502] p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            placeholder="Leave a message"
+            className="w-full text-white bg-[#858502] p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+            required
           ></textarea>
           <div className="flex justify-between p-2 w-full">
-            <button className="bg-[yellow] py-1 px-6 rounded-md text-black font-bold">
-              Send
+            <button
+              type="submit"
+              className="bg-[yellow] py-1 px-6 rounded-md text-black font-bold"
+              disabled={loading} // Disable the button when loading
+            >
+              {loading ? "Sending..." : "Send"}{" "}
+              {/* Show sending text when loading */}
             </button>
             <div className="flex gap-5 text-[yellow]">
-              <Link
-                href={
-                  "https://www.tiktok.com/@apexgym8?is_from_webapp=1&sender_device=pc"
-                }
-              >
+              <Link href="https://www.tiktok.com/@apexgym8?is_from_webapp=1&sender_device=pc">
                 <AiFillTikTok size={50} />
               </Link>
-              <Link href={""}>
+              <Link href="">
                 <BsInstagram size={50} />
               </Link>
-              <Link href={"https://wa.me/256705366652"}>
+              <Link href="https://wa.me/256705366652">
                 <RiWhatsappFill size={50} />
               </Link>
             </div>
           </div>
         </form>
         <Image
-          src={"/images/call.jpg"}
-          alt=""
+          src="/images/call.jpg"
+          alt="Contact image"
           width={400}
           height={400}
           className="hidden md:block h-[550px] w-[40%] object-cover rounded-lg"
